@@ -35,7 +35,6 @@ class _LoginScreenState extends State<LoginScreen> {
         return new Scaffold(
             backgroundColor: AppColors.white,
             key: _scaffoldKey,
-            resizeToAvoidBottomPadding: true,
             body: SingleChildScrollView(
               physics: NeverScrollableScrollPhysics(),
               child: Container(
@@ -184,11 +183,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 PageRouteConstants.home_screen,
                 (Route<dynamic> route) => false);
           } else if (state is LoginFailure) {
-           /* Helper.showAlert(context, StringConstant.error_message,
+            /* Helper.showAlert(context, StringConstant.error_message,
                 StringConstant.invalid_user_credentials);*/
             Navigator.of(context).pushNamedAndRemoveUntil(
                 PageRouteConstants.home_screen,
-                    (Route<dynamic> route) => false);
+                (Route<dynamic> route) => false);
           }
         },
         child: BlocBuilder<LoginBloc, LoginState>(

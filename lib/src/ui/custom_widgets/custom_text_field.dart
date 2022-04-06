@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc_architecture/src/constants/font_constants.dart';
@@ -21,7 +20,7 @@ class CustomTextField extends StatelessWidget {
   final Function tap;
   final bool isFocused;
   final String counterText;
-  final bool autoValidate;
+  final AutovalidateMode autoValidate;
   final textAlignment;
   final FocusNode currentFocusNode;
   final FocusNode nextFocusNode;
@@ -46,7 +45,7 @@ class CustomTextField extends StatelessWidget {
     this.tap,
     this.isFocused,
     this.counterText = "",
-    this.autoValidate = false,
+    this.autoValidate = AutovalidateMode.onUserInteraction,
     this.currentFocusNode,
     this.nextFocusNode,
     this.onFieldSubmitted,
@@ -138,7 +137,7 @@ class CustomTextField extends StatelessWidget {
       ),
       validator: validator,
       //define method here or in place of use
-      autovalidate: autoValidate,
+      autovalidateMode: autoValidate,
     );
   }
 }

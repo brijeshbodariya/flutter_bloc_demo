@@ -1,13 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 class SimpleBlocDelegate extends BlocObserver {
   final bool verbose = false;
 
   @override
   void onEvent(Bloc bloc, Object event) {
     super.onEvent(bloc, event);
-    print(event.toString());
+   print(event.toString());
   }
 
   @override
